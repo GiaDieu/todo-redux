@@ -1,13 +1,151 @@
 body {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  background-color: #e91e63;
+  overflow: hidden;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 5em;
+}
+
+.Header {
+  color: #fff;
+  text-align: center;
+}
+.form {
+  position: relative;
+  left: 28%;
+  margin-top: 3em;
+  margin-bottom: 5em;
+}
+
+input[type="text"] {
+  width: 50%;
+  height: 3em;
+  border: 1px solid #2099cf;
+}
+
+.btn-add {
+  background-color: #ffeb3b;
+  font-size: 1.12em;
+  color: #111;
+  border: none;
+  outline: none;
+  padding: 0.5em 2em;
+}
+
+.todo-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.todo-items {
+  display: flex;
+  font-size: 0.8em;
+  list-style: none;
+  padding: 1em 2em;
+  width: 50%;
+  height: 100%;
+  justify-content: flex-start;
+  margin: 0 auto;
+}
+
+.Todo {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+}
+
+.todo-item {
+  display: flex;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  margin: 0.2em 1em;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  font-size: 1.4em;
+  color: #fff;
+  background-color: #111;
+  padding: 1em;
+}
+
+.btn {
+  display: flex;
+  align-content: center;
+}
+
+.trash-btn,
+.check-btn {
+  color: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 0.5em;
+  transition: 0.2s all ease;
+  padding: 4.3em;
+  font-size: 0.4em;
+  transition: 0.5s all ease-out;
+}
+
+.check-btn {
+  background-color: #2099cf;
+}
+.trash-btn {
+  background-color: #a52a2a;
+}
+
+.AnimationRemove {
+  animation: fall-apart 0.5s ease-out;
+}
+
+@keyframes fall-apart {
+  100% {
+    transform: rotateZ(20deg) translateY(8rem);
+    opacity: 0;
+  }
+}
+
+.Completed {
+  opacity: 0.4;
+  text-decoration: line-through;
+  color: #fff;
+  background-color: #111;
+  font-size: 1.4em;
+}
+
+.links {
+  position: relative;
+  top: 0;
+  left: 28%;
+}
+
+.btn-link {
+  background-color: #0062b1;
+  color: #f1f1f1;
+  border: 1px solid #ccc;
+  outline: none;
+  padding: 1em 3em;
+  margin: 8em 0;
+  align-self: flex-start;
+}
+
+.btn-link.active {
+  background-color: #ccc;
 }
